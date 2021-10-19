@@ -14,10 +14,15 @@ public class App {
     }
 
     public void query() {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
         // Open a connection
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(QUERY);) {
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(QUERY);
 
             // Extract data from result set
             while (rs.next()) {
@@ -25,6 +30,22 @@ public class App {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) { /* Ignored */}
+            }
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) { /* Ignored */}
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) { /* Ignored */}
+            }
         }
     }
 }
