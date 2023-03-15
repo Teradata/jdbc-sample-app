@@ -7,10 +7,31 @@
   <groupId>com.teradata.app</groupId>
   <artifactId>jdbc-sample-app</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <name>Teradata JDBC Driver sample app</name>
+  <description>Sample app using the Teradata JDBC Driver</description>
+  <url>https://github.com/Teradata/jdbc-sample-app</url>
 
-  <name>jdbc-sample-app</name>
-  <!-- FIXME change it to the project's website -->
-  <url>https://teradata.github.io/quickstarts</url>
+  <licenses>
+    <license>
+      <name>APACHE LICENSE, VERSION 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Teradata Developer Advocates</name>
+      <email>developers@teradata.com</email>
+      <organization>Teradata</organization>
+      <organizationUrl>https://www.teradata.com/</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/Teradata/jdbc-sample-app.git</connection>
+    <developerConnection>scm:git:ssh://github.com:Teradata/jdbc-sample-app.git</developerConnection>
+    <url>https://github.com/Teradata/jdbc-sample-app</url>
+  </scm>  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
